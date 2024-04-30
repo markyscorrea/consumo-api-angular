@@ -1,0 +1,29 @@
+{
+  "musics": [
+    {
+      "id": "1",
+      "artista": "Michael Jackson",
+      "musicaMaisConhecida": "Thriller"
+    },
+    {
+      "id": "2",
+      "artista": "The Beatles",
+      "musicaMaisConhecida": "Hey Jude"
+    },
+    {
+      "id": "3",
+      "artista": "Elvis Presley",
+      "musicaMaisConhecida": "Can't Help Falling in Love"
+    },
+    {
+      "id": "4",
+      "artista": "Madonna",
+      "musicaMaisConhecida": "Like a Prayer"
+    },
+    {
+      "id": "5",
+      "artista": "Queen",
+      "musicaMaisConhecida": "Bohemian Rhapsody"
+    }
+  ]
+}

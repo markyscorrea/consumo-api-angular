@@ -1,0 +1,53 @@
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <h1>CRUD Musics</h1>
+</div>
+
+<div class="container">
+    <div class="m-5">
+
+        <div class="input-group mb-3">
+            <input [(ngModel)]="id" name="id" disabled type="text" class="form-control" placeholder="ID"
+                aria-label="ID">
+            <input [(ngModel)]="artista" name="artista" type="text" class="form-control" placeholder="Artista"
+                aria-label="Artista">
+            <input [(ngModel)]="musica" name="musica" type="text" class="form-control" placeholder="Músicas Mais Tocada"
+                aria-label="Músicas Mais Tocada">
+        </div>
+
+        <button (click)="buttonClick()" type="button" class="btn btn-success">
+            {{ id ? 'Salvar Música' : 'Adicionar Música' }}
+        </button>
+        <button [disabled]="!id" (click)="cancelarEdicao()" type="button" class="btn btn-outline-secondary ms-1">
+            Cancelar Edição
+        </button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Artista</th>
+                <th scope="col">Música Mais Tocada</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (musica of listaMusicas; track $index) {
+            <tr>
+                <td>{{ musica.id }}</td>
+                <td>{{ musica.artista }}</td>
+                <td>{{ musica.musicaMaisConhecida }}</td>
+                <td>
+                    <button (click)="preencherCampos(musica)" type="button" class="btn btn-warning me-1"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                        Editar
+                    </button>
+                    <button (click)="removerMusica(musica.id!)" type="button" class="btn btn-danger"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                        Excluir
+                    </button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
